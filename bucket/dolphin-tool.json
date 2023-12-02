@@ -1,0 +1,22 @@
+{
+	"version": "5.0-20347",
+	"description": "Command line tool for managing Wii and GameCube images.",
+	"homepage": "https://dolphin-emu.org/",
+	"license": "GPLv2+",
+	"architecture": {
+		"64bit": {
+			"url": "https://dl.dolphin-emu.org/builds/c8/35/dolphin-master-5.0-20347-x64.7z",
+			"extract_dir": "Dolphin-x64"
+		},
+		"arm64": {
+			"url": "https://dl.dolphin-emu.org/builds/36/7e/dolphin-master-5.0-20347-ARM64.7z",
+			"extract_dir": "Dolphin-ARM64"
+		}
+	},
+	"bin":[
+		"DolphinTool.exe"
+	],
+	"post_install": [
+		"Remove-Item -Path $dir -Recurse -Exclude DolphinTool.exe"
+	]
+}
